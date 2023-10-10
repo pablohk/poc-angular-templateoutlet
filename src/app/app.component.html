@@ -1,0 +1,29 @@
+<button (click)="handleClick()">value 1</button>
+<button (click)="handleClick2()">value 2</button>
+<div style="border: 5px solid black; padding: 5px">
+  <bm-accordion
+  [labelText]="'ehhhh'"
+  [data]="value"
+  [template]="templateEnviado"
+  [link]="templateLink">
+    <bm-icon  rightIcon [icon]="'right'"></bm-icon>
+    <p>del template: {{value}}</p>
+    <bm-icon  leftIcon [icon]="'left'"></bm-icon>
+
+  </bm-accordion>
+
+  <bm-accordion [labelText]="'ehhhh'" [data]="value2" [template]="templateEnviado">
+    <p>del template: {{value2}}</p>
+  </bm-accordion>
+
+  <ng-template #templateEnviado>
+    <p>formulario</p>
+    <bm-icon [icon]="'left enviado '+value2"></bm-icon>
+    <bm-icon [icon]="'right enviado'"></bm-icon>
+  </ng-template>
+  <ng-template #templateLink>
+    <p>templateLink</p>
+    <bm-icon [icon]="'left enviado '+value2"></bm-icon>
+    <bm-icon [icon]="'right enviado'"></bm-icon>
+  </ng-template>
+</div>

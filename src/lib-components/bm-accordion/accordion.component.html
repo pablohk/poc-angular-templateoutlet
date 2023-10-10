@@ -1,0 +1,15 @@
+<div style="border: 1px solid green; padding: 5px; margin: 5px">
+  <p>Del input: {{data}}</p>
+  <ng-content select="p"></ng-content>
+  <ng-content select="[leftIcon]"></ng-content>
+  <span>{{labelText}}</span>
+  <ng-content select="[rightIcon]"></ng-content>
+</div>
+
+
+<ng-template *ngTemplateOutlet="template">
+</ng-template>
+
+<ng-template *ngTemplateOutlet="link">
+</ng-template>
+
