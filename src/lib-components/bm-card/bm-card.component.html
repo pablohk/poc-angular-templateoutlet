@@ -1,0 +1,12 @@
+<div class="card-container">
+    <h3 class="title">{{title}}</h3>
+    <div class="card-container__content-wrapper">
+        <bm-icon 
+            class="icon-holder"
+            [icon]="iconName"
+            (handleIconClick)="handleIconChange()"
+            />
+        <p class="content">{{text}}</p>
+    </div>
+    <img *ngIf="iconName==='top'" class="code-content" src="{{code}}" />
+</div>

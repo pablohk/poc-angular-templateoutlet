@@ -1,20 +1,28 @@
 import { Component } from '@angular/core';
 
+const icons = ['left', 'right', 'top', 'bottom'];
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
 })
-export class AppComponent{
+export class AppComponent {
+  icon = 'bottom';
+  iconTemplate = 'bottom';
+  iconTemplateTemplate = 'bottom';
 
-  value = 4;
-  value2 = 3;
-
-  handleClick() {
-    this.value = Math.round(Math.random() * 100);
+  handleIcon() {
+    const rdn = Math.floor(Math.random() * icons.length);
+    this.icon = icons[rdn];
   }
 
-  handleClick2() {
-    this.value2 = Math.round(Math.random() * 100);
+  handleIconTemplate() {
+    this.iconTemplate = this.iconTemplate === 'bottom' ? 'top' : 'bottom';
+  }
+
+  handleIconTemplateTemplate() {
+    this.iconTemplateTemplate =
+      this.iconTemplateTemplate === 'bottom' ? 'top' : 'bottom';
   }
 }

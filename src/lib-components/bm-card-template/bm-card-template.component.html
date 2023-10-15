@@ -1,0 +1,16 @@
+<div class="card-container">
+  <div class="title">
+    <ng-content select="[T_title]"></ng-content>
+  </div>
+  <div class="card-container__content-wrapper">
+    <div class="icon-holder">
+      <ng-content select="[T_icon]"></ng-content>
+    </div>
+    <div class="content">
+      <ng-content select="[T_content]"></ng-content>
+    </div>
+  </div>
+  <div class="code-content">
+    <ng-content select="[T_codeContent]"></ng-content>
+  </div>
+</div>
