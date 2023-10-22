@@ -1,0 +1,16 @@
+{
+  "fileExtensions": ["ts"],
+  "excludeRegExp":["^(?=.*.spec.ts)"],
+  "tsConfig": "tsconfig.json",
+  "fontSize": "10px",
+  "backgroundColor":"#000",
+  "rankdir": "TB",
+  "layout":"twopi",
+  "detectiveOptions": {
+    "ts": {
+      "mixedImports": true
+    }
+  },
+  "graphVizOptions": {
+  }
+}
