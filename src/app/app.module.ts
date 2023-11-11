@@ -7,6 +7,7 @@ import { BMIconModule } from 'src/lib-components/bm-icon/bm-icon.module';
 import { BmCardComponent } from 'src/lib-components/bm-card/bm-card.component';
 import { BmCardTemplateComponent } from 'src/lib-components/bm-card-template/bm-card-template.component';
 import { BmCardTemplateOutletComponent } from 'src/lib-components/bm-card-template-outlet/bm-card-template-outlet.component';
+import { MouseActionsDirective } from 'src/directives/mouse-actions.directive';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { BmCardTemplateOutletComponent } from 'src/lib-components/bm-card-templa
     BMIconModule,
     BmCardComponent,
     BmCardTemplateComponent,
-    BmCardTemplateOutletComponent
+    BmCardTemplateOutletComponent,
+    MouseActionsDirective
   ],
   providers: [
   ],
