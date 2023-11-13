@@ -1,72 +1,54 @@
-<p appMouseActions>testo a probar</p>
-<bm-card 
-  class="block" 
-  [title]="'Modo normal <bm-card>'" 
-  [iconName]="'bottom'"
-  [text]="'Uso normal del componente, se le pasa @Inputs para el título, icono y texto.'+' \n'
+<p style="position:absolute;background-color: black">EEE</p>
+<p appMouseActions>texto a probar</p>
+<div class="tt">
+  <p *ngFor="let item of tooltipPosition" (click)="handletooltip(item)">{{item}}</p>
+</div>
+
+  <button class="end-position" appTooltip tooltipPosition="{{ttPos}}">
+  Hover me
+</button>
+{{ttPos}}
+<bm-card class="block" [title]="'Modo normal <bm-card>'" [iconName]="'bottom'" [text]="'Uso normal del componente, se le pasa @Inputs para el título, icono y texto.'+' \n'
     +' La maquetación la tiene el componente <bm-card>.'+' \n'
-    +' Tiene dependencia de <bm-icon>'"
-  [code]="'assets/bm-card.png'"
->
+    +' Tiene dependencia de <bm-icon>'" [code]="'assets/bm-card.png'">
 </bm-card>
 
 <bm-card-template class="block">
-  <h3 T_title>Modo Template con select<\bm-card-template\></h3>
-  <bm-icon
-    appMouseActions
-    T_icon
-    [icon]="iconTemplate"
-    (handleIconClick)="handleIconTemplate()"
-  />
+  <h3 T_title>Modo Template con select&#60;\bm-card-template\&#62;</h3>
+  <bm-icon appTooltip tooltipPosition="{{ttPos}}" T_icon [icon]="iconTemplate" (handleIconClick)="handleIconTemplate()" />
   <p T_content>
-   En este caso no se usa @Input (), se usa un template para la card con sus select (T_title, T_icon, ...) para colocar los elementos donde corresponde.<br/>
-   La maquetación la tiene el componente <\bm-card-template\> y necesita :host ::ng-deep para maquetar la imagen.<br/> 
-   No tiene dependencia de <\bm-icon>
+    En este caso no se usa &#64;Input (), se usa un template para la card con sus select (T_title, T_icon, ...) para colocar
+    los elementos donde corresponde.&#60;br /&#62;
+    La maquetación la tiene el componente &#60;\bm-card-template\&#62; y necesita :host ::ng-deep para maquetar la imagen.&#60;br /&#62;
+      No tiene dependencia de &#60;\bm-icon&#62;
   </p>
   <img *ngIf="iconTemplate === 'top'" T_codeContent src="assets/bm-card-template.png" />
 </bm-card-template>
 
-<bm-card-template-outlet 
-  class="block"
-  [cardTemplateRef]="cardTemplate"
-  [mode]="'normal'"
-></bm-card-template-outlet>
+<bm-card-template-outlet class="block" [cardTemplateRef]="cardTemplate" [mode]="'normal'"></bm-card-template-outlet>
 <ng-template #cardTemplate>
-  <bm-card
-    [title]="'Modo templateOutlet <bm-card-template-outlet> y uso de <bm-card> como referencia de template'"
-    [iconName]="'bottom'"
-    [text]="'Como le pasamos como template ref el componente <bm-card>, los datos son pasados como @Inputs del <bm-card>.'+'\n'
+  <bm-card [title]="'Modo templateOutlet <bm-card-template-outlet> y uso de <bm-card> como referencia de template'"
+    [iconName]="'bottom'" [text]="'Como le pasamos como template ref el componente <bm-card>, los datos son pasados como @Inputs del <bm-card>.'+'\n'
       +' La maquetación la tiene <bm-card>.'+' \n'+' No tiene dependencia de <\bm-icon>'"
-    [code]="'assets/bm-card-template-outlet.png'"
-    >
+    [code]="'assets/bm-card-template-outlet.png'">
   </bm-card>
 </ng-template>
 
 
-<bm-card-template-outlet 
-  class="block"
-  [cardTemplateRef]="cardTemplateTemplate"
-  [mode]="'template'"
-></bm-card-template-outlet>
+<bm-card-template-outlet class="block" [cardTemplateRef]="cardTemplateTemplate"
+  [mode]="'template'"></bm-card-template-outlet>
 <ng-template #cardTemplateTemplate>
-  <h3
-    class="title">Modo templateOutlet <\bm-card-template-outlet> y como template ref. se le pasa el bloque HTML
+  <h3 class="title">Modo templateOutlet <\bm-card-template-outlet> y como template ref. se le pasa el bloque HTML
   </h3>
   <div class="card-container-outlet__content-wrapper">
-    <bm-icon
-      class="icon-holder"
-      [icon]="iconTemplateTemplate"
-      (handleIconClick)="handleIconTemplateTemplate()"
-    />
-    <p 
-      class="content" >
-        En este caso se le está pasando un bloque HTML como template ref. ( y no el componente <\bm-card>)<br/>
-        Parecido a <\bm-template> pero sin etiquetarlos para los select<br/>
-        Para este caso, necesita añadir nombres de clases en donde se invoca el componente, y en el componente <\bm-card-template-outlet> maquetar con esas clases y usar :host ::ng-deep.<br/>
-        No tiene dependencia de <\bm-icon>
+    <bm-icon appTooltip tooltipPosition="{{ttPos}}" class="icon-holder" [icon]="iconTemplateTemplate" (handleIconClick)="handleIconTemplateTemplate()" />
+    <p class="content">
+      En este caso se le está pasando un bloque HTML como template ref. ( y no el componente <\bm-card>)<br />
+        Parecido a <\bm-template> pero sin etiquetarlos para los select<br />
+          Para este caso, necesita añadir nombres de clases en donde se invoca el componente, y en el componente
+          <\bm-card-template-outlet> maquetar con esas clases y usar :host ::ng-deep.<br />
+            No tiene dependencia de <\bm-icon>
     </p>
-</div>
-<img
-*ngIf="iconTemplateTemplate === 'top'"
-src="assets/bm-card-template-outlet_template_mode.png">
+  </div>
+  <img *ngIf="iconTemplateTemplate === 'top'" src="assets/bm-card-template-outlet_template_mode.png">
 </ng-template>

@@ -8,10 +8,12 @@ import { BmCardComponent } from 'src/lib-components/bm-card/bm-card.component';
 import { BmCardTemplateComponent } from 'src/lib-components/bm-card-template/bm-card-template.component';
 import { BmCardTemplateOutletComponent } from 'src/lib-components/bm-card-template-outlet/bm-card-template-outlet.component';
 import { MouseActionsDirective } from 'src/directives/mouse-actions.directive';
+import { TooltipDirective } from 'src/directives/tooltip.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
+    TooltipDirective,
    ],
   imports: [
     BrowserModule,
