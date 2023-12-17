@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-
 const icons = ['left', 'right', 'top', 'bottom'];
 
 @Component({
@@ -19,12 +18,12 @@ export class AppComponent {
     'bottom-center',
     'top-left',
     'center-left',
-    'bottom-left'
+    'bottom-left',
   ];
 
-  public ttPos= this.tooltipPosition[2];
+  public ttPos = this.tooltipPosition[2];
 
-  handletooltip(event:string){
+  handletooltip(event: string) {
     this.ttPos = event;
   }
 

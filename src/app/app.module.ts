@@ -9,6 +9,7 @@ import { BmCardTemplateComponent } from 'src/lib-components/bm-card-template/bm-
 import { BmCardTemplateOutletComponent } from 'src/lib-components/bm-card-template-outlet/bm-card-template-outlet.component';
 import { MouseActionsDirective } from 'src/directives/mouse-actions.directive';
 import { TooltipDirective } from 'src/directives/tooltip.directive';
+import { UrlAssetsPipe } from 'src/pipes/urlAssets.pipe';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { TooltipDirective } from 'src/directives/tooltip.directive';
     BmCardComponent,
     BmCardTemplateComponent,
     BmCardTemplateOutletComponent,
-    MouseActionsDirective
+    MouseActionsDirective,
+    UrlAssetsPipe
   ],
   providers: [
   ],
